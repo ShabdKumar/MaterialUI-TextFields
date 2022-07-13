@@ -68,16 +68,6 @@ Add following to the dependencies in package.json file in entry folder of your p
 import { MaterialTextField, MaterialTextFieldOptions, MaterialTextFieldType } from "@ohos/MaterialTextField"
 ```
 
-### APIs:
-
-`MaterialTextField({textFieldType:MaterialTextFieldType,textFieldParameters:MaterialTextFieldOptions})`
-
-***Parameters:***
-
-textFieldType:[MaterialTextFieldType*](README.md#MaterialTextFieldType)
-
-textFieldOptions:[MaterialTextFieldOptions](README.md#MaterialTextFieldOptions)
-
 3. Usage:
 
 ```
@@ -116,6 +106,7 @@ struct Outlined_sample {
   build() {
     Flex({ direction: FlexDirection.Column, justifyContent: FlexAlign.SpaceAround, alignItems: ItemAlign.Center }) {
       MaterialTextField({ textFieldParameters: this.textFieldOptions, textFieldType: MaterialTextFieldType.Outlined })
+      TextInput({ placeholder: 'he', text: 'ger' }).width('200vp').height('100vp').fontFamily('cursive')
     }
     .width('100%')
     .height('300vp')
@@ -124,9 +115,19 @@ struct Outlined_sample {
 }
 ```
 
-<img src="screenshots/usage.gif" width="328" height="227">
+<img src="screenshots/usage.gif" width="365" height="325">
 
-## 7. MaterialTextFieldOptions
+## 7. APIs, Parameters, Options, Attributes and Events:
+
+`MaterialTextField({textFieldType:MaterialTextFieldType,textFieldParameters:MaterialTextFieldOptions})`
+
+### Parameters:
+
+textFieldType:[MaterialTextFieldType]()
+
+textFieldOptions:[MaterialTextFieldOptions]()
+
+### MaterialTextFieldOptions:
 
 |Parameter|type|Remarks|
 |-|-|-|
@@ -141,7 +142,7 @@ struct Outlined_sample {
 |padding|Length or Padding|-|
 |border|[BorderOptions](https://developer.harmonyos.com/en/docs/documentation/doc-references/ts-universal-attributes-border-0000001158261223)|-|
    
-## 8. MaterialTextFieldType
+### MaterialTextFieldType
     1. Filled
     2. Outlined
     
@@ -163,7 +164,9 @@ struct Outlined_sample {
 |caretColor|Color|color of cursor when input is being edited|
    
 ### Atrributes:
+
 The following attributes are supported for TextFieldOptions:
+
 |Attribute|Description|
 |-|-|
 |setTextFIeldType(type:MaterialTextFieldType)|sets textfield type|
