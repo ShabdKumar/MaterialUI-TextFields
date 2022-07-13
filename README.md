@@ -104,9 +104,19 @@ struct Outlined_sample {
   }
 
   build() {
-    Flex({ direction: FlexDirection.Column, justifyContent: FlexAlign.SpaceAround, alignItems: ItemAlign.Center }) {
-      MaterialTextField({ textFieldParameters: this.textFieldOptions, textFieldType: MaterialTextFieldType.Outlined })
-      TextInput({ placeholder: 'he', text: 'ger' }).width('200vp').height('100vp').fontFamily('cursive')
+    Flex({
+      direction: FlexDirection.Column,
+      justifyContent: FlexAlign.SpaceAround,
+      alignItems: ItemAlign.Center
+    }) {
+      MaterialTextField({
+        textFieldParameters: this.textFieldOptions,
+        textFieldType: MaterialTextFieldType.Outlined
+      })
+      TextInput({
+        placeholder: 'he',
+        text: 'ger'
+      }).width('200vp').height('100vp').fontFamily('cursive')
     }
     .width('100%')
     .height('300vp')
@@ -123,9 +133,9 @@ struct Outlined_sample {
 
 ### Parameters:
 
-textFieldType:[MaterialTextFieldType]()
+textFieldType: [MaterialTextFieldType](#materialtextfieldtype)
 
-textFieldOptions:[MaterialTextFieldOptions]()
+textFieldOptions: [MaterialTextFieldOptions](#materialtextfieldoptions)
 
 ### MaterialTextFieldOptions:
 
@@ -143,8 +153,9 @@ textFieldOptions:[MaterialTextFieldOptions]()
 |border|[BorderOptions](https://developer.harmonyos.com/en/docs/documentation/doc-references/ts-universal-attributes-border-0000001158261223)|-|
    
 ### MaterialTextFieldType
-    1. Filled
-    2. Outlined
+
+1. Filled
+2. Outlined
     
 ### TextInputOptions
 |Options|type|Remarks|
@@ -169,15 +180,15 @@ The following attributes are supported for TextFieldOptions:
 
 |Attribute|Description|
 |-|-|
-|setTextFIeldType(type:MaterialTextFieldType)|sets textfield type|
-|setLabel(label:string,labelWidth:number)|sets the label for textfield|
-|setHelperText(text:string)|setsthe helper text|
-|setCharacterCounter(enable:boolean,maxCharacters:number)|enables character counter and maximum allowed characters|
-|setIcons(leadingIcon:Resource,trailingIcon:Resource)|sets leading and trailing icons|
-|setTextInputOptions(textInputOptions:TextInputOptions)|sets the input text options|
-|setMargin(margin:Length or Padding)|sets the margin for textfield|
-|setPadding(padding:Length or Padding)|sets the padding for textfield|
-|setBorder(options:BorderOptions)|sets the border parameters for textfield|
+|`setTextFIeldType(type:MaterialTextFieldType)`|sets textfield type|
+|`setLabel(label:string,labelWidth:number)`|sets the label for textfield|
+|`setHelperText(text:string`)|sets the helper text|
+|`setCharacterCounter(enable:boolean,maxCharacters:number)`|enables character counter and maximum allowed characters|
+|`setIcons(leadingIcon:Resource,trailingIcon:Resource)`|sets leading and trailing icons|
+|`setTextInputOptions(textInputOptions:TextInputOptions)`|sets the input text options|
+|`setMargin(margin:Length or Padding)`|sets the margin for textfield|
+|`setPadding(padding:Length or Padding)`|sets the padding for textfield|
+|`setBorder(options:BorderOptions)`|sets the border parameters for textfield|
 
 ### Events:
 |Event|Description|
