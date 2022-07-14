@@ -369,7 +369,7 @@ aboutToAppear() {
 
 <img src="screenshots/feature6.gif" width="353" height="245">
 
-`Note: There are more setting options for input textbox than shown (placeholderText, input and caretColor) in above code snippet. Some of those are font-style, font-weight, placeholder-font, input-type and Enter Key-type.`
+***Note: There are more setting options for input textbox than shown (placeholderText, input and caretColor) in above code snippet. Some of those are font-style, font-weight, placeholder-font, input-type and Enter Key-type.***
 
 ## 9. Advanced features that could be implemented in Future:
 
