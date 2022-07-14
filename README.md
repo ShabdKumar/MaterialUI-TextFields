@@ -4,7 +4,7 @@ A **Text-Field** is a space where users are allowed to type any text into the ap
 
 Below is an example of a Text-field:
 
-<img src="screenshots/simple.PNG" width="215" height="84">
+<img src="screenshots/textfields_simple.PNG" width="215" height="84">
 
 Developers can add some other activities to this text-field - like error showing, all ok status with tick symbol, prefixes and suffixes etc.
 
@@ -19,7 +19,7 @@ Developers can add some other activities to this text-field - like error showing
 
 MaterialText-Fields can be used in scenarios like where data needs to be gathered from users like: forms, login page etc. Below are some of the examples:
 
-<img src="screenshots/usecase1.PNG" width="250" height="400"> <img src="screenshots/usecase2.PNG" width="250" height="400">
+<img src="screenshots/textfields_usecase1.PNG" width="250" height="400"> <img src="screenshots/textfields_usecase2.PNG" width="250" height="400">
 
 ## 4. List of Features:
 
@@ -35,18 +35,18 @@ There are few features of Radio buttons listed below:
 
 Please refer below Image: 
 
-<img src="screenshots/featuresList.PNG" width="629" height="334">
+<img src="screenshots/textfields_featuresList.PNG" width="629" height="334">
 
 ## 5. Exemplary Images:
 
 ### Defocused TextFields:
 
-![Alt text](./screenshots/outlined-defocused.png "Outlined" )   ![Alt text](./screenshots/filled-labeled-defocused.png "Filled" )
+![Alt text](./screenshots/textfields_outlined-defocused.png "Outlined" )   ![Alt text](./screenshots/textfields_filled-labeled-defocused.png "Filled" )
 
 ### Focused TextFields:
 
-![Alt text](./screenshots/filled-labeled-focused.png "Filled Labeled" )   ![Alt text](./screenshots/filled-nonlabeled-focused.png "Filled Non-labeled" )  
-![Alt text](./screenshots/outlined-focused-labeled.png "Outlined Labeled" )   ![Alt text](./screenshots/outlined-focused-nonlabeled.png "Outlined Non-labeled" )
+![Alt text](./screenshots/textfields_filled-labeled-focused.png "Filled Labeled" )   ![Alt text](./screenshots/textfields_filled-nonlabeled-focused.png "Filled Non-labeled" )  
+![Alt text](./screenshots/textfields_outlined-focused-labeled.png "Outlined Labeled" )   ![Alt text](./screenshots/textfields_outlined-focused-nonlabeled.png "Outlined Non-labeled" )
 
 ## 6. Install and Usage Instructions:
 
@@ -125,7 +125,7 @@ struct Outlined_sample {
 }
 ```
 
-<img src="screenshots/usage.gif" width="365" height="325">
+<img src="screenshots/textfields_usage.gif" width="365" height="325">
 
 ## 7. APIs, Parameters, Options, Attributes and Events:
 
@@ -229,7 +229,7 @@ build() {
 
 ***Screenshot:***
 
-<img src="screenshots/feature1.PNG" width="367" height="246">
+<img src="screenshots/textfields_feature1.PNG" width="367" height="246">
 
 <br>
 
@@ -255,7 +255,7 @@ aboutToAppear(): void {
 
 ***Screenshot:***
 
-<img src="screenshots/feature2.gif" width="364" height="192">
+<img src="screenshots/textfields_feature2.gif" width="364" height="192">
 
 ### Feature-3: 
 
@@ -285,7 +285,7 @@ aboutToAppear() {
 
 ***Screenshot:***
 
-<img src="screenshots/feature3.PNG" width="386" height="84">
+<img src="screenshots/textfields_feature3.PNG" width="386" height="84">
 
 ### Feature-4: 
 
@@ -308,7 +308,7 @@ aboutToAppear() {
 
 ***Screenshot:***
 
-<img src="screenshots/feature4.PNG" width="370" height="86">
+<img src="screenshots/textfields_feature4.PNG" width="370" height="86">
 
 ### Feature-5: 
 
@@ -337,7 +337,7 @@ aboutToAppear() {
 
 ***Screenshot:***
 
-<img src="screenshots/feature5.gif" width="353" height="245">
+<img src="screenshots/textfields_feature5.gif" width="353" height="245">
 
 ### Feature-6: 
 
@@ -367,7 +367,7 @@ aboutToAppear() {
 
 ***Screenshot:***
 
-<img src="screenshots/feature6.gif" width="353" height="245">
+<img src="screenshots/textfields_feature6.gif" width="353" height="245">
 
 ***Note: There are more setting options for input textbox than shown (placeholderText, input and caretColor) in above code snippet. Some of those are font-style, font-weight, placeholder-font, input-type and Enter Key-type.***
 
