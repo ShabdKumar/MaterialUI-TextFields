@@ -195,8 +195,8 @@ The following attributes are supported for TextFieldOptions:
 |-|-|
 |onLeadingIconClick(callBack:(event:[ClickEvent](https://developer.harmonyos.com/en/docs/documentation/doc-references/ts-universal-events-click-0000001111581270#EN-US_TOPIC_0000001111581270__li155675712535))=>void)|triggered when leading icon is being clicked|
 |onTrailingIconClick(callBack:(event:[ClickEvent](https://developer.harmonyos.com/en/docs/documentation/doc-references/ts-universal-events-click-0000001111581270#EN-US_TOPIC_0000001111581270__li155675712535))=>void)|triggered when trailing icon is being clicked|
-|onChange(callBack:(event:value?:string=>void|triggered when textfield input changes|
-|onSubmit(callBack:(enterKey?:[EnterKeyType](https://developer.harmonyos.com/en/docs/documentation/doc-references/ts-basic-components-textinput-0000001233397495#EN-US_TOPIC_0000001233397495__li1231618102427))=>void|triggered when input of textfield is submitted|
+|onChange(callBack:(event:value?:string=>void)|triggered when textfield input changes|
+|onSubmit(callBack:(enterKey?:[EnterKeyType](https://developer.harmonyos.com/en/docs/documentation/doc-references/ts-basic-components-textinput-0000001233397495#EN-US_TOPIC_0000001233397495__li1231618102427))=>void)|triggered when input of textfield is submitted|
 |onEditChange(callBack:(isEditing:boolean)=>void)|triggered when user stops editing|
 |isValid(callback:(value?:string)=>{})|triggered when user stops editing, should return an object of type: { valid:boolean,errorMessage:string}|
 
@@ -204,85 +204,88 @@ The following attributes are supported for TextFieldOptions:
 
 ### Feature-1: 
 
-***Description:*** A default toggle switch is provided by the library.
+***Description:*** User can define the type of textfield: *Filled* or *Outlined*.
 
 ***Code Snippet:***
 
 ```
-updateModelForFirst() {
-    this.switchModel1.reset()
-    this.switchModel1.setSwitchId(1)
-}
-
-Switch({
-    model: this.switchModel1,
-    onSelect: (id, isOn) => {
-        prompt.showToast({
-            message: id.toString()
-        })
-    }
-})
+build() {
+    Flex({
+      ...
+    }) {
+      Text('Filled and Labeled').fontSize('15fp').padding('5fp')
+      MaterialTextField({
+        textFieldParameters: this.filledLabelParas,
+        textFieldType: MaterialTextFieldType.Filled
+      });
+      Text('Outlined and Labeled').fontSize('15fp').margin({ top: '40vp' })
+      MaterialTextField({
+        textFieldParameters: this.outlinedLabelParas,
+        textFieldType: MaterialTextFieldType.Outlined
+      });
+    }.width('100%')
+  }
 ```
-***Explanation:***
-
-In above code one switch was created whose all attributes values were resetted to default one and then switch id assigned with value 1. While clicking the button one toast will appear showing the ***id*** of the switch.
-
-
-***Below are list of properties available:***
-
-|Properties|Description|
-|:-:|:-:|
-|`setSwitchId(number)`|Providing id to switches|
-|`reset()`|Will initialize the value of all attributes with default value|
-|||
 
 ***Screenshot:***
 
-<img src="screenshots/feature1.gif" width="246" height="460">
+<img src="screenshots/feature1.PNG" width="367" height="246">
 
 <br>
 
 ### Feature-2: 
 
-***Description:*** User can create a customized toggle switch based on the parameters passed.
+***Description:*** User can insert Label for the textfields.
 
 ***Code Snippet:***
 
-```
-updateModelForFourth() {
-    this.switchModel4.reset()
-    this.switchModel4.setSwitchId(4)
-    this.switchModel4.setIsOn(true)
-    this.switchModel4.setWithIcon(true)
-}
+`outlinedLabelParas = new TextFieldOptions.setLabel(‘User’);`
 
-Switch({
-    model: this.switchModel4,
-    onSelect: (id, isOn) => {
-        prompt.showToast({
-            message: id.toString()
-        })
+or,
+
+```
+outlinedLabelParas: MaterialTextFieldOptions = new MaterialTextFieldOptions;
+
+aboutToAppear(): void {
+    this.outlinedLabelParas = {
+      ...this.outlinedLabelParas,
+      label: 'User',
+      .
+      .
+      .
     }
-})
+}
 ```
-
-***Explanation:***
-
-In above code one customized switch was created whose all attributes values were resetted to default one and then switch id assigned with value 4 and by default switch was made enabled and having tick icon in circular space.Tick icon is default icon getting selected while calling reset() function. Developers can use any other icons as well. While clicking button one toast will appear showing the ***id*** of the switch i.e. ***4***.
-
-***Below are list of properties available:***
-
-|Properties|Description|
-|:-:|:-:|
-|`setSwitchId(number)`|Providing id to switches|
-|`reset()`|Will initialize the value of all attributes with default value|
-|`setIsOn(boolean)`|By default making switch enabled or disabled|
-|`setWithIcon(boolean)`|It will add or remove the icon added in Switch|
-|||
 
 ***Screenshot:***
 
-<img src="screenshots/feature2.gif" width="246" height="460">
+<img src="screenshots/feature2.gif" width="364" height="192">
+
+### Feature-3: 
+
+***Description:*** User can insert trailing and leading icons and  bind other on-click features like drop down menu and date picker with these icons.
+
+***Code Snippet:***
+
+`outlinedLabelParas = new TextFieldOptions.setLabel(‘User’);`
+
+or,
+
+```
+outlinedLabelParas: MaterialTextFieldOptions = new MaterialTextFieldOptions;
+
+aboutToAppear(): void {
+    this.outlinedLabelParas = {
+      ...this.outlinedLabelParas,
+      label: 'User',
+      ...
+    }
+}
+```
+
+***Screenshot:***
+
+<img src="screenshots/feature2.gif" width="364" height="192">
 
 ## 8. Conclusion:
 This library is for using toggle switches that can be customized based on colors, an icon passed by the user and also be set to disabled or On/Off state.
