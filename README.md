@@ -50,7 +50,7 @@ Please refer below Image:
 
 ## 6. Install and Usage Instructions:
 
-1. Add dependencies:
+### 1. Add dependencies:
 
 Add following to the dependencies in package.json file in entry folder of your project:
 
@@ -62,13 +62,13 @@ Add following to the dependencies in package.json file in entry folder of your p
 }
 ```
 
-2. Import files:
+### 2. Import files:
 
 ```ts
 import { MaterialTextField, MaterialTextFieldOptions, MaterialTextFieldType } from "@ohos/MaterialTextField"
 ```
 
-3. Usage:
+### 3. Usage:
 
 ```ts
 import { MaterialTextField, MaterialTextFieldOptions, MaterialTextFieldType } from "@ohos/MaterialTextField"
@@ -154,12 +154,12 @@ textFieldOptions: [MaterialTextFieldOptions](#materialtextfieldoptions)
 |padding|Length or Padding|-|
 |border|[BorderOptions](https://developer.harmonyos.com/en/docs/documentation/doc-references/ts-universal-attributes-border-0000001158261223)|-|
    
-### MaterialTextFieldType
+### MaterialTextFieldType:
 
 1. Filled
 2. Outlined
     
-### TextInputOptions
+### TextInputOptions:
 |Options|type|Remarks|
 |-|-|-|
 |id|string|id of textfield|
