@@ -54,7 +54,7 @@ Please refer below Image:
 
 Add following to the dependencies in package.json file in entry folder of your project:
 
-```            
+```json
 {
     "dependencies": {
         "@ohos/materialtextfield": "file:../materialtextfield"
@@ -64,13 +64,13 @@ Add following to the dependencies in package.json file in entry folder of your p
 
 2. Import files:
 
-```
+```ts
 import { MaterialTextField, MaterialTextFieldOptions, MaterialTextFieldType } from "@ohos/MaterialTextField"
 ```
 
 3. Usage:
 
-```
+```ts
 import { MaterialTextField, MaterialTextFieldOptions, MaterialTextFieldType } from "@ohos/MaterialTextField"
 
 @Entry
@@ -129,7 +129,9 @@ struct Outlined_sample {
 
 ## 7. APIs, Parameters, Options, Attributes and Events:
 
-`MaterialTextField({textFieldType:MaterialTextFieldType,textFieldParameters:MaterialTextFieldOptions})`
+```ts
+MaterialTextField({textFieldType:MaterialTextFieldType,textFieldParameters:MaterialTextFieldOptions})
+```
 
 ### Parameters:
 
@@ -208,7 +210,7 @@ The following attributes are supported for TextFieldOptions:
 
 ***Code Snippet:***
 
-```
+```ts
 build() {
     Flex({
       ...
@@ -239,7 +241,7 @@ build() {
 
 ***Code Snippet:***
 
-```
+```ts
 outlinedLabelParas: MaterialTextFieldOptions = new MaterialTextFieldOptions;
 
 aboutToAppear(): void {
@@ -263,7 +265,7 @@ aboutToAppear(): void {
 
 ***Code Snippet:***
 
-```
+```ts
 filledLabelParas: MaterialTextFieldOptions = new MaterialTextFieldOptions;
 
 aboutToAppear() {
@@ -293,7 +295,7 @@ aboutToAppear() {
 
 ***Code Snippet:***
 
-```
+```ts
 filledLabelParas: MaterialTextFieldOptions = new MaterialTextFieldOptions;
 
 aboutToAppear() {
@@ -316,7 +318,7 @@ aboutToAppear() {
 
 ***Code Snippet:***
 
-```
+```ts
 outlinedLabelParas: MaterialTextFieldOptions = new MaterialTextFieldOptions;
 
 aboutToAppear() {
@@ -345,7 +347,7 @@ aboutToAppear() {
 
 ***Code Snippet:***
 
-```
+```ts
 outlinedLabelParas: MaterialTextFieldOptions = new MaterialTextFieldOptions;
 
 aboutToAppear() {
