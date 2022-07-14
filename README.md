@@ -1,6 +1,6 @@
 ## 1. Introduction
 
-A **Text-Field** is a space where users are allowed to type any text into the app. Text-fields allows user to implement various activities on the inserted text i.e. cut, copy, paste, auto-correction, validation etc. If you click on a text-field space, it will display the keyboard.
+A **Text-Field** is a space where users are allowed to type any text into the app. Text-fields allow users to implement various activities on the inserted text i.e. cut, copy, paste, auto-correction, validation etc. If you click on a text-field space, it will display the keyboard.
 
 Below is an example of a Text-field:
 
@@ -17,7 +17,7 @@ Developers can add some other activities to this text-field - like error showing
 
 ## 3. Typical UseCases:
 
-MaterialText-Fields can be used in scenario like where data needs to be gathered from users like: forms, login page etc. Below are some of the examples:
+MaterialText-Fields can be used in scenarios like where data needs to be gathered from users like: forms, login page etc. Below are some of the examples:
 
 <img src="screenshots/usecase1.PNG" width="250" height="400"> <img src="screenshots/usecase2.PNG" width="250" height="400">
 
@@ -28,7 +28,7 @@ There are few features of Radio buttons listed below:
 |Features|Description|
 |:-:|:-:|
 |Labeled/Non-Labeled|Label can be enabled and disabled for the field.|
-|Assistive Elements|Elements like Helper Text and Charactre counter can be implemented with the field|
+|Assistive Elements|Elements like Helper Text and Character counter can be implemented with the field|
 |Leading and Trailing Icons|Icons can be added to help user to understand the type of input expected|
 |Error Message assistance|to check and verify the type of input require|
 |||
@@ -174,7 +174,7 @@ textFieldOptions: [MaterialTextFieldOptions](#materialtextfieldoptions)
 |enterKeyType|[EnterKeyType](https://developer.harmonyos.com/en/docs/documentation/doc-references/ts-basic-components-textinput-0000001233397495#EN-US_TOPIC_0000001233397495__li1231618102427)|enter key functionality|
 |caretColor|Color|color of cursor when input is being edited|
    
-### Atrributes:
+### Attributes:
 
 The following attributes are supported for TextFieldOptions:
 
@@ -239,10 +239,6 @@ build() {
 
 ***Code Snippet:***
 
-`outlinedLabelParas = new TextFieldOptions.setLabel(‘User’);`
-
-or,
-
 ```
 outlinedLabelParas: MaterialTextFieldOptions = new MaterialTextFieldOptions;
 
@@ -263,21 +259,25 @@ aboutToAppear(): void {
 
 ### Feature-3: 
 
-***Description:*** User can insert trailing and leading icons and  bind other on-click features like drop down menu and date picker with these icons.
+***Description:*** Users can insert trailing and leading icons and  bind other on-click features like drop down menu and date picker with these icons.
 
 ***Code Snippet:***
 
-`outlinedLabelParas = new TextFieldOptions.setLabel(‘User’);`
-
-or,
-
 ```
-outlinedLabelParas: MaterialTextFieldOptions = new MaterialTextFieldOptions;
+filledLabelParas: MaterialTextFieldOptions = new MaterialTextFieldOptions;
 
-aboutToAppear(): void {
-    this.outlinedLabelParas = {
-      ...this.outlinedLabelParas,
-      label: 'User',
+aboutToAppear() {
+    this.filledLabelParas = {
+      ...this.filledLabelParas,
+      ...
+      leadingIcon: $r("app.media.account"),
+      trailingIcon: $r("app.media.clear"),
+      leadingIconClick: (event) => {
+        ...
+      },
+      trailingIconClick: (event) => {
+        ...
+      },
       ...
     }
 }
@@ -285,10 +285,102 @@ aboutToAppear(): void {
 
 ***Screenshot:***
 
-<img src="screenshots/feature2.gif" width="364" height="192">
+<img src="screenshots/feature3.PNG" width="386" height="84">
 
-## 8. Conclusion:
-This library is for using toggle switches that can be customized based on colors, an icon passed by the user and also be set to disabled or On/Off state.
+### Feature-4: 
 
-## 9. Code Contribution:
-If you find any problems during usage, you can submit an [Issue](https://github.com/Applib-OpenHarmony/MaterialSwitch/issues) to us. Of course, we also welcome you to send us [PR](https://github.com/Applib-OpenHarmony/MaterialSwitch/pulls).
+***Description:*** Users can add assistive elements like helper-text and character counter.
+
+***Code Snippet:***
+
+```
+filledLabelParas: MaterialTextFieldOptions = new MaterialTextFieldOptions;
+
+aboutToAppear() {
+    this.filledLabelParas = {
+      ...this.filledLabelParas,
+      helperText: "Helper Text",
+      characterCounter: true,
+      ...
+    }
+}
+```
+
+***Screenshot:***
+
+<img src="screenshots/feature4.PNG" width="370" height="86">
+
+### Feature-5: 
+
+***Description:*** User can check the validity of input given (required while validating mail-id, password format etc.) by defining callback function.
+
+***Code Snippet:***
+
+```
+outlinedLabelParas: MaterialTextFieldOptions = new MaterialTextFieldOptions;
+
+aboutToAppear() {
+    this.outlinedLabelParas = {
+      ...this.outlinedLabelParas,
+      ...
+      characterCounter: true,
+      validate: (value) => {
+        if (value.charAt(4) == 'd')
+                return { valid: true, errorMessage: '' };
+        else
+                return { valid: false, errorMessage: 'd should be at 5th position' }
+      },
+      ...
+    }
+}
+```
+
+***Screenshot:***
+
+<img src="screenshots/feature5.gif" width="353" height="245">
+
+### Feature-6: 
+
+***Description:*** User can set various input-box parameters which are available in the TextInput component for open-harmony developers.
+
+***Code Snippet:***
+
+```
+outlinedLabelParas: MaterialTextFieldOptions = new MaterialTextFieldOptions;
+
+aboutToAppear() {
+    this.outlinedLabelParas = {
+      ...this.outlinedLabelParas,
+      ...
+      textInputOptions: {
+        placeholderText: "eg: Harold",
+        placeholderFont: {
+          size: 20,
+          style: FontStyle.Italic,
+          weight: FontWeight.Normal
+        }
+      },
+      ...
+    }
+}
+```
+
+***Screenshot:***
+
+<img src="screenshots/feature6.gif" width="353" height="245">
+
+`Note: There are more setting options for input textbox than shown (placeholderText, input and caretColor) in above code snippet. Some of those are font-style, font-weight, placeholder-font, input-type and Enter Key-type.`
+
+## 9. Advanced features that could be implemented in Future:
+
+Given below are suggestive features that could be implemented in future release of the library:
+* Multiline input box.
+* Theming of text fields.
+* Addition of Voice Input
+* Implementation of prefix and suffix for the input text.
+
+## 10. Conclusion:
+There are cases when a user needs to specify the type of input expected in an input field. This library is the solution for users to implement differentiating text fields with add-ons like leading and trailing icons,  helper text etc. 
+
+## 11. Code Contribution:
+If you find any problems during usage, you can submit an [Issue](https://github.com/Applib-OpenHarmony/MaterialTextFields/issues) to us. Of course, we also welcome you to send us [PR](https://github.com/Applib-OpenHarmony/MaterialTextFields/pulls).
