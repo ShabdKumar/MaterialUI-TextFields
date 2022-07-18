@@ -228,6 +228,9 @@ build() {
     }.width('100%')
   }
 ```
+***Explaination:***
+
+Above code will create two simple Text Fields, first textfield will be type *filled* and second one will be *outlined*.
 
 ***Screenshot:***
 
@@ -254,6 +257,9 @@ aboutToAppear(): void {
     }
 }
 ```
+***Explaination:***
+
+Above code will create a Textfield, where the label is mentioned *User*, By default it will show the label inside the Textfield but when you click on textfield to type it will appear at the top of the textfield.
 
 ***Screenshot:***
 
@@ -285,6 +291,10 @@ aboutToAppear() {
 }
 ```
 
+***Explaination:***
+
+Above code will create a Textfield, where icons are added at front and at end of the textfield called *Leading* and *Trainling icon* respectively. Developers can update the function to see what will happen if the user will click on these icons.
+
 ***Screenshot:***
 
 <img src="screenshots/textfields_feature3.PNG" width="386" height="84">
@@ -307,6 +317,9 @@ aboutToAppear() {
     }
 }
 ```
+***Explaination:***
+
+Above code will create a Textfield with a helper text and character counter. Helper text will tell users what needs to be filled in the above Text Field and the character counter will count the number of characters added in Textfield.
 
 ***Screenshot:***
 
@@ -337,6 +350,10 @@ aboutToAppear() {
 }
 ```
 
+***Explaination:***
+
+Above code will create a Textfield with some validation checks. Like for the above example: if the user will not insert d at 5th position it will give an error message like the screenshot below. 
+
 ***Screenshot:***
 
 <img src="screenshots/textfields_feature5.gif" width="353" height="245">
@@ -366,6 +383,10 @@ aboutToAppear() {
     }
 }
 ```
+
+***Explaination:***
+
+Above code will create a Textfield with some text inputs. We can use placeholders while clicking the textfield. It will still show the details in the textfield only what type of information the user needs to provide.
 
 ***Screenshot:***
 
